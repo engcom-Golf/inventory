@@ -63,6 +63,12 @@ class Source extends AbstractDb
     protected function _construct()
     {
         $this->_init(self::TABLE_NAME_SOURCE, SourceInterface::SOURCE_CODE);
+        $this->addUniqueField(
+            [
+                'field' => SourceInterface::NAME,
+                'title' => 'Name'
+            ]
+        );
     }
 
     /**
